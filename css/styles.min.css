@@ -38,6 +38,113 @@ body {
   background-color: transparent;
   border: 0.175rem solid aquamarine;
 }
-.uploader__file {
+.uploader__btn.--upload {
+  margin-left: 0.5rem;
+}
+.uploader__btn.--hidden {
+  opacity: 0;
+  pointer-events: none;
+  cursor: unset;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  transition: 200ms;
+}
+.uploader__file,
+.uploader [type=file] {
   display: none;
+}
+.uploader__preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.uploader__preview-item {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.uploader__preview-item.--removing {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+.uploader__preview-item-img {
+  width: 180px;
+  height: auto;
+}
+.uploader__preview-item-remove {
+  width: 20px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.uploader__preview-item:hover .uploader__preview-item-remove {
+  opacity: 1;
+}
+.uploader__preview-item-title {
+  width: 100%;
+  height: 25px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.uploader__preview-item-title p {
+  padding: 0.5rem;
+  margin: 0;
+}
+.uploader__preview-item:hover .uploader__preview-item-title {
+  opacity: 1;
+}
+.uploader__preview-item-progress {
+  width: 22%;
+  background-color: aquamarine;
+  -webkit-transition: width 200ms;
+  -o-transition: width 200ms;
+  transition: width 200ms;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 25px;
+  bottom: 0;
 }
