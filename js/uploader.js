@@ -45,7 +45,6 @@ export function uploader(selector, options = {}) {
       const reader = new FileReader();
 
       reader.onload = (e) => {
-        console.log(e.target.result);
         previewImages.insertAdjacentHTML('afterbegin', `
           <div class="uploader__preview-item">
             <button class="uploader__preview-item-remove" data-file-name="${file.name}">&times;</button>
@@ -64,7 +63,6 @@ export function uploader(selector, options = {}) {
   const handlerRemoveImage = event => {
     let fileName;
     if (fileName = event.target.dataset.fileName) {
-      console.log(arrFiles);
       arrFiles = arrFiles.filter(file => file.name !== fileName);
 
       if (!arrFiles.length) {
@@ -80,7 +78,6 @@ export function uploader(selector, options = {}) {
   }
 
   const clearPreviewImagesTitles = (el) => {
-    // el.innerHTML = '<div class="uploader__preview-item-progress"></div>';
     el.insertAdjacentHTML('afterend', `<div class="uploader__preview-item-progress"></div>`);
     el.remove();
   } 
